@@ -1,0 +1,325 @@
+% !TEX TS-program = pdflatex
+% !TEX encoding = UTF-8 Unicode
+%
+% This is a simple template for a LaTeX document using the "article" class.
+% See "book", "report", "letter" for other types of document.
+
+\documentclass[11pt]{article} % use 12pt for true LSA-like documents
+
+
+\usepackage[utf8]{inputenc} % set input encoding (not needed with XeLaTeX)
+
+%%% Examples of Article customizations
+% These packages are optional, depending whether you want the features they provide.
+% See the LaTeX Companion or other references for full information.
+
+%%% PAGE DIMENSIONS
+\usepackage{geometry} % to change the page dimensions
+\geometry{letterpaper}
+%\geometry{a4paper} % or letterpaper (US) or a5paper or....
+\geometry{margin=0.75in} % for example, change the margins to 2 inches all round
+% \geometry{landscape} % set up the page for landscape
+%   read geometry.pdf for detailed page layout information
+
+\usepackage{graphicx} % support the \includegraphics command and options
+
+% \usepackage[parfill]{parskip} % Activate to begin paragraphs with an empty line rather than an indent
+
+%%% PACKAGES
+\usepackage{tipa} % !IPA font
+\usepackage{covington} % better examples
+\usepackage{hanging} % hanging indentation
+\usepackage{qtree} % syntax trees
+\usepackage[normalem]{ulem} % allows underlining
+\usepackage{amssymb} % more math symbols
+\usepackage{stmaryrd} % for making denotation brackets, etc.
+\usepackage{setspace} % \singlespacing \doublespacing etc.
+\usepackage{booktabs} % for much better looking tables
+\usepackage{array} % for better arrays (eg matrices) in maths
+\usepackage{paralist} % very flexible & customisable lists (eg. enumerate/itemize, etc.)
+\usepackage{verbatim} % adds environment for commenting out blocks of text & for better verbatim
+\usepackage{subfig} % make it possible to include more than one captioned figure/table in a single float
+\usepackage{multirow} % span multiple rows/columns in tabular
+\usepackage[section]{placeins} % prevent floats from going to awkward places
+\usepackage{colortbl,varwidth,qtree,arydshln}
+%%%% some added packages
+\usepackage{array}
+
+\usepackage{CJKutf8}
+
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{tcolorbox}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{colortbl}
+\tcbuselibrary{skins}
+
+\newcolumntype{Y}{>{\raggedleft\arraybackslash}X}
+
+\tcbset{tab1/.style={fonttitle=\bfseries\large,fontupper=\normalsize\sffamily,
+colback=yellow!10!white,colframe=red!75!black,colbacktitle=Salmon!40!white,
+coltitle=black,center title,freelance,frame code={
+\foreach \n in {north east,north west,south east,south west}
+{\path [fill=red!75!black] (interior.\n) circle (3mm); };},}}
+
+%%%%%%%%%%%%%%%%
+%%% HEADERS & FOOTERS
+\usepackage{fancyhdr} % This should be set AFTER setting up the page geometry
+\pagestyle{fancy} % options: empty , plain , fancy
+\lhead{Lesson initially prepared by Blake H. Allen, LaTeX code and content modified by Kamila Kolpashnikova \\SJC Japanese Class 2015: Lesson 2}\chead{}\rhead{}
+\lfoot{}\cfoot{}\rfoot{}
+
+%%% SECTION TITLE APPEARANCE
+\usepackage{sectsty}
+\allsectionsfont{\sffamily\mdseries\upshape} % (See the fntguide.pdf for font help)
+% (This matches ConTeXt defaults)
+
+%%% ToC (table of contents) APPEARANCE
+\usepackage[nottoc,notlof,notlot]{tocbibind} % Put the bibliography in the ToC
+\usepackage[titles,subfigure]{tocloft} % Alter the style of the Table of Contents
+\renewcommand{\cftsecfont}{\rmfamily\mdseries\upshape}
+\renewcommand{\cftsecpagefont}{\rmfamily\mdseries\upshape} % No bold!
+
+\newcommand \bal[2]{\only<#1>{\textbf}{#2}}
+\newcommand{\bl}[2]{\bal{#1}{\alert<#1>{#2}}}
+
+\newcommand{\subdot}{\textsubdot}
+\newcommand{\up}{\textsuperscript}
+
+\usepackage{hyperref}
+\usepackage{xcolor}
+\definecolor{dark-red}{rgb}{0.4,0.15,0.15}
+\definecolor{dark-blue}{rgb}{0.15,0.15,0.4}
+\definecolor{medium-blue}{rgb}{0,0,0.5}
+\hypersetup{
+    colorlinks, linkcolor={dark-red},
+    citecolor={dark-blue}, urlcolor={medium-blue} }
+
+\newcommand{\bex}[0]{\begin{example}}
+\newcommand{\eex}[0]{\end{example}}
+\newcommand{\q}[1]{\textipa{#1}}
+\newcommand{\citey}{\citeyearpar}% uses natbib
+\newcommand{\evalfun}[2][]{\ensuremath{\left\llbracket \mbox{#2} \right\rrbracket^{#1}}}
+\newcommand{\lambt}[2]{\ensuremath{\lambda #1 \in D_{#2}}} %\lambt{x}{e}
+\newcommand{\setof}[1]{\ensuremath{\left \{ #1 \right \}}}
+\newcommand{\scell}[2][c]{\begin{tabular}[#1]{@{}c@{}}#2\end{tabular}} % \scell{} allows \\ in tabular
+\newcommand{\ee}{\vspace{.10cm}\\} %ee for "Example End"
+
+\linespread{1}
+
+\setlength{\parindent}{0pt}
+
+%%% END Article customizations
+
+%%% The "real" document content comes below...
+
+\begin{document}
+
+\section{Set Phrases \& Pronunciation}
+
+\begin{tabular}{l || l}
+
+\textbf{Konnichiwa!} (Hello!) & Hiragana:\\
+\textbf{Konbanwa.} (Good evening.) & \textbf{a ka sa ta} 
+\begin{CJK}{UTF8}{min}あ・か・さ・た\end{CJK}\\
+\textbf{Ohayoo gozaimasu.} (Good morning.) & \textbf{i ki shi chi} 
+\begin{CJK}{UTF8}{min}い・き・し・ち\end{CJK}\\
+\textbf{Arigatoo gozaimasu.} (Thank you.)  & \textbf{u ku su tsu} 
+\begin{CJK}{UTF8}{min}う・く・す・つ\end{CJK}\\
+\textbf{Sumimasen...} (Pardon me...)		& \textbf{e ke se te} 
+\begin{CJK}{UTF8}{min}え・け・せ・て\end{CJK}\\
+											& \textbf{o ko so to} 
+\begin{CJK}{UTF8}{min}お・こ・そ・と\end{CJK}
+\end{tabular}\\
+- Sounds with doubled letters are pronounced longer: \textbf{e} vs. \textbf{ee}, \textbf{o} vs. \textbf{oo}, \textbf{n} vs. \textbf{nn}, etc.\\
+- Also, note that [ee] is often written $<$\textbf{ei}$>$, and [oo] as $<$\textbf{ou}$>$.
+
+\section{Nouns}
+\begin{tabular}{l | l || l | l}
+\textbf{watashi} & I						& \textbf{\textit{(name)}-san} & he/she\\
+\textbf{anata} & you\\
+\hline
+\textbf{kore} & this (close to speaker)\\
+\textbf{sore} & this/that (close to listener)\\
+\textbf{are} & that (far from both)\\
+\hline
+\textbf{sensee} & teacher(s)				& \textbf{otoko (no hito)} & man\\
+\textbf{gakusee} & student(s)				& \textbf{onna (no hito)}  & woman\\
+\textbf{neko} & cat(s)						& \textbf{kuruma}		   & car\\
+\textbf{inu} & dog(s)						& \textbf{ringo}		   & apple\\
+\textbf{kutsu} & shoe(s)					& \textbf{raamen}		   & ramen\\
+\textbf{purasuchikku} & plastic				& \textbf{paatii}		   & party\\
+\hline
+\textbf{dare} & who							& \textbf{itsu}				& when\\
+\textbf{nan/nani} & what\\
+\textbf{doko} & where\\
+\end{tabular}\\
+(Note: For most nouns, the singular and plural look/sound the same.)
+
+
+\section{``is"}
+$\bigstar$ \textit{A} is/am/are... \textit{B}. $\Rightarrow$ \textbf{\textit{A} wa \textit{B} desu.}
+\begin{CJK}{UTF8}{min}(AはBです。)\end{CJK}\\
+(Note: B is a noun that describes or is equivalent to A.)\ee
+
+$\bigstar$ \textit{A} is/am/are... NOT \textit{B}. $\Rightarrow$ \textbf{\textit{A} wa \textit{B} ja arimasen.}
+\begin{CJK}{UTF8}{min}(AはBじゃありません。)\\
+＿＿＿＿＿は＿＿＿＿ではありません。＿＿＿＿は＿＿＿＿＿じゃない（です）。\\
+＿＿＿＿＿wa＿＿＿＿＿dewa arimasen. ＿＿＿＿wa＿＿＿＿ja nai (desu).\end{CJK}\ee
+
+$\bullet$ "Kare wa Jaehyun desu."\\ \begin{CJK}{UTF8}{min} かれ は じぇひょん です。 He is Jaehyun.\end{CJK}\\
+$\bullet$ "Kore wa tsukue desu."\\ \begin{CJK}{UTF8}{min}これ　は　つくえ　です。　This is a table.\end{CJK}\\
+$\bullet$ "Blake wa onna no hito ja arimasen."\\ \begin{CJK}{UTF8}{min}べれいく　は　おんな　の　ひと　じゃ ありません。　Blake is not a woman.\end{CJK}\\
+$\bullet$ "Kiwa \textit{to} Jaehyun wa sensee desu."\\ \begin{CJK}{UTF8}{min}きわ　と　じぇひょん　は　せんせい　です。 Kiwa and Jaehyun are teachers.\end{CJK}\\
+(Note: \textbf{\textit{to}} = \textit{and}; it is used with nouns.)
+
+\section{Jikoshokai}
+\begin{CJK}{UTF8}{min}\textbf{hajimemashite. Watashi no namae wa ＿＿＿＿＿＿　desu. Yoroshiku onegai shimasu.}\\
+はじめまして　わたし　の　なまえ　は　＿＿＿＿　です。よろしく　おねがい　します。\\
+初めまして。私の名前は＿＿＿です。宜しくお願いします。\ee
+
+$\bullet$ \textbf{＿＿＿＿kara kimashita.}\\
+＿＿＿＿から　きました。 ＿＿＿＿＿から来ました。\\
+I am [came] from ＿＿＿＿\\
+$\bullet$ \textbf{O-kuni wa dochira desu ka.} \\
+お　くに　は　どちら　です か。 お国はどちらですか。\\
+What [where] is your country? \\
+$\bullet$ \textbf{go-shusshin wa dochira desu ka.} \\
+ご　しゅっしん　は　どちら　です　か。 ご出身はどちらですか。\\
+What [where] is your place of origin?\end{CJK}
+
+$\bigstar$ \textit{Sorry, I do no understand.} $\Rightarrow$ \textbf{Sumimasen. Wakarimasen.}\\
+\begin{CJK}{UTF8}{min}すみません。わかりません。\\
+sumimasen. chotto wakarimasen ga.\\
+すみません。ちょっと　わかりません　が。\\
+sumimasen.　chotto wakaranai n desu ga.\\
+すみません。ちょっと　わからない　ん　です　が。 \end{CJK}\\
+
+\section{Questions \& Possession/Relationships}
+\begin{tcolorbox}[tab1,tabularx={X||Y}]
+$\bigstar$ (question sentence) $\Rightarrow$ \textbf{(sentence) ka} & $\bigstar$ \textit{A}'s \textit{B} $\Rightarrow$ \textbf{\textit{A} no \textit{B}}
+\begin{CJK}{UTF8}{min}(AのB)\end{CJK}\\ \hline
+$\bullet$ Anata wa Kanada-jin desu ka. & $\bullet$ Kanada wa anata no kuni desu ka.\\
+\begin{CJK}{UTF8}{min} あなた　は　かなだ　じん　です　か。あなたはカナダ人ですか。\end{CJK} & \begin{CJK}{UTF8}{min}かなだ　は　あなた　の　くに　です　か。　カナダはあなたの国ですか。\end{CJK}\\ \hline
+$\bullet$ Jaehyun wa neko desu ka? & $\bullet$ Anata wa dare no gakusee desu ka?\\
+\begin{CJK}{UTF8}{min} じぇひょん　は　ねこ　です　か。　ジェヒョンは猫ですか。\end{CJK} & \begin{CJK}{UTF8}{min}あなた　は　だれ　の　がくせい　です　か。あなたは誰の学生ですか。\end{CJK}\\ \hline
+$\bullet$ Kore wa isu desu ka? & $\bullet$ Blake no kutsu wa doko desu ka?\\
+\begin{CJK}{UTF8}{min}これ　は　いす　です　か。これはイスですか。\end{CJK} & \begin{CJK}{UTF8}{min}ぶれいく　の　くつ　どこ　です　か。\end{CJK}\\ \hline
+$\bullet$ Sensee wa dare desu ka? & $\bullet$ Kono onna no hito wa dare desu ka?\\
+\begin{CJK}{UTF8}{min}せんせい　は　だれ　です　か。先生は誰ですか。\end{CJK} & \begin{CJK}{UTF8}{min}この　おんな　の　ひと　は　だれ　です　か。　この女の人は誰ですか。\end{CJK}\\ \hline
+$\bullet$ Kore wa nan desu ka? & $\bullet$ Watashi no isu wa purasuchikku no isu ja arimasen.\\ 
+\begin{CJK}{UTF8}{min}これ　は　なん　です　か。　\end{CJK} & \begin{CJK}{UTF8}{min}わたし　の　いす　ぷらすちっく　じゃ　ありません。\end{CJK}\\ \hline
+
+\end{tcolorbox}
+
+
+\section{Adjectives}
+
+- Adjectives:\\
+$\bigstar$1) modify (come before) nouns, or \\
+$\bigstar$2) come before \textit{desu} to describe something.\ee
+- They come in \textit{two types}: those ending in [-i] and those ending in [-na].
+\begin{center}
+\begin{tabular}{l l | l l}
+\multicolumn{2}{c}{-i type}			 & \multicolumn{2}{c}{-na type}\\
+\hline
+\textbf{aoi} & blue 				& \textbf{kirei-na} & pretty	\\
+\begin{CJK}{UTF8}{min}　あおい　\end{CJK} && \begin{CJK}{UTF8}{min}　きれいな　\end{CJK}\\
+\textbf{akai} & red 				& \textbf{kantan-na} & simple/easy \\
+\begin{CJK}{UTF8}{min}　あかい　\end{CJK} && \begin{CJK}{UTF8}{min}　かんたんな　\end{CJK}\\
+\textbf{utsukushii} & beautiful 	& \textbf{oshare-na} & fashionable \\
+\begin{CJK}{UTF8}{min}　うつくしい　\end{CJK} && \begin{CJK}{UTF8}{min}　おしゃれな　\end{CJK}\\
+\textbf{oishii} & delicious 		& \textbf{hen-na}	& weird\\
+\begin{CJK}{UTF8}{min}　おいしい　\end{CJK} && \begin{CJK}{UTF8}{min}　へんな　\end{CJK}\\
+\textbf{tanoshii} & fun 			& \textbf{iya-na}	& unpleasant\\
+\begin{CJK}{UTF8}{min}　たのしい　\end{CJK} && \begin{CJK}{UTF8}{min}　いやな　\end{CJK}\\
+\textbf{atsui} & hot 				& \textbf{benri-na} & convenient\\
+\begin{CJK}{UTF8}{min}　あつい　\end{CJK} && \begin{CJK}{UTF8}{min}　べんりな　\end{CJK}\\
+\textbf{samui} & cold 				& \textbf{genki-na} & healthy/feeling well\\
+\begin{CJK}{UTF8}{min}　さむい　\end{CJK} && \begin{CJK}{UTF8}{min}　げんきな　\end{CJK}\\
+\textbf{muzukashii} & difficult 	& \textbf{anzen-na}	& safe\\
+\begin{CJK}{UTF8}{min}　むずかしい　\end{CJK} && \begin{CJK}{UTF8}{min}　あんぜんな　\end{CJK}\\
+\textbf{ookii} & large 				& \textbf{kiken-na} & dangerous\\
+\begin{CJK}{UTF8}{min}　おおきい　\end{CJK} && \begin{CJK}{UTF8}{min}　きけんな　\end{CJK}\\
+\textbf{chiisai} & small \\
+\begin{CJK}{UTF8}{min}　ちいさい\end{CJK}&&&\\
+\textbf{atarashii}	& new \\
+\begin{CJK}{UTF8}{min}　あたらしい　\end{CJK}&&&\\
+\textbf{warui} & bad \\
+\begin{CJK}{UTF8}{min}　わるい　\end{CJK}&&&\\
+\end{tabular}
+\end{center}
+
+$\bullet$ \textbf{ookii neko} ``a large cat"\\
+\begin{CJK}{UTF8}{min}おおきい　ねこ\end{CJK}\\
+\begin{CJK}{UTF8}{min}ちゅうごく　は　おおきい　です。\end{CJK} Chuugoku wa ookii desu.\\
+\begin{CJK}{UTF8}{min}ろしあ　も　おきい　です。\end{CJK} Roshia mo ookii desu.\\
+$\bullet$ \textbf{oshare-na kutsu} ``fashionable shoes"\\
+\begin{CJK}{UTF8}{min}おしゃれな　くつ\end{CJK}\\
+\begin{CJK}{UTF8}{min}かみら　は　おしゃれな　もの　すき　じゃ　ない。\end{CJK} Kamira wa oshare-na mono suki ja nai.\ee
+
+$\bullet$ \textbf{Anata wa utsukushii desu.} ``You are beautiful."\\
+\begin{CJK}{UTF8}{min}あなた　は　うつくしい　です。あなたは美しいです。\end{CJK}\\
+- Note that if you use a ``-na" adjective before ``desu", you leave out the ``na":\\
+$\bullet$ \textbf{Genki desu ka?} ``Are you well? / How are you?"\\ (NOT \textit{genki-na desu ka})\\
+\begin{CJK}{UTF8}{min}げんき　です　か。元気ですか。\end{CJK}\ee
+
+More examples:\\
+$\bullet$ \textbf{Raamen wa oishii desu}.  ``Ramen is delicious."\\
+$\bullet$ \textbf{Kore wa ookii tsukue desu.} ``This is a big desk." (cf. \textbf{Kono tsukue wa ookii desu.})\\
+$\bullet$ \textbf{Warui hito wa kiken desu}.  ``Bad people are dangerous."\ee
+
+\section{Negative Adjectives}
+
+- Negation:(``not $\sim$")\\
+- Form depends on the adjective type:\ee
+
+$\bigstar$ not (adjective) $\Rightarrow$\\
+-i $\rightarrow$ -kunai \\
+-na $\rightarrow$ -ja nai \ee
+
+$\bullet$ \textbf{oishikunai sushi} ``sushi that is not delicious" (literally: ``not-delicious sushi")\\
+$\bullet$ \textbf{anzen ja nai isu} ``a chair that is not safe" ($\approx$ ``an unsafe chair")\\
+$\bullet$ \textbf{Nihongo wa muzukashiku nai desu}. ``Japanese is not difficult."\\
+$\bullet$ \textbf{Genki ja nai desu ka}?  ``Are you not feeling well?"\\
+
+\section{Demonstratives}
+
+\begin{tabular}{l l||l l | l l | l l | l l}
+& & \multicolumn{2}{c}{`this' } & \multicolumn{2}{c}{`this/that'} & \multicolumn{2}{c}{`that'} & \multicolumn{2}{c}{(question)}\\
+\hline
+& & \multicolumn{2}{c}{\textbf{ko-}} & \multicolumn{2}{c}{\textbf{so-}} & \multicolumn{2}{c}{\textbf{a-}} & \multicolumn{2}{c}{\textbf{do-}}\\
+\hline
+noun & \textbf{-re}& \textbf{kore} & this (n.) & \textbf{sore} & this/that (n.) & \textbf{are} & that (n.) & \textbf{dore} & which one? \\
+adjective & \textbf{-no}& \textbf{kono} & this (a.) & \textbf{sono} & this/that (a.) & \textbf{ano} & that (a.) & \textbf{dono} & which? \\
+place & \textbf{-ko}& \textbf{koko} & here & \textbf{soko} & there & \textbf{\textbf{asoko}} & over there & \textbf{dono} & where? \\
+\end{tabular}\\\vspace{1cm}
+
+$\bullet$ \textbf{Kore wa isu desu}.  ``This is a chair."\\
+$\bullet$ \textbf{Kono neko wa kawaii desu.} ``This cat is cute."\\
+$\bullet$ \textbf{Koko no raamen wa oishii desu}. ``The ramen here (=of this place) is delicious."\ee
+
+$\bullet$ \textbf{Sono hito wa dare desu ka}?  ``Who is that person?"\ee
+
+$\bullet$ \textbf{Ano inu wa kiken ja nai}.  ``That dog (someone else's) is not dangerous."\ee
+
+$\bullet$ \textbf{Anata no isu wa dore desu ka}?  ``Which one is your chair?"\\
+
+
+\section{Sentence Practice!}
+
+Work with a partner (or two) and try to translate these sentences to/from Japanese:\ee
+
+$\bullet$ This desk is large.\\
+$\bullet$ The food here (literally: food of here) is delicious.\\
+$\bullet$ Small dogs are fashionable.\\
+$\bullet$ That is not safe.\\
+$\bullet$ Which is the new car? (literally: the new car is which one?)\ee
+
+$\bullet$ Sensee wa hen ja nai.\\
+$\bullet$ Akai ringo wa oishii desu.\\
+$\bullet$ Sono atarashikunai kuruma wa dare no kuruma desu ka?\\
+$\bullet$ Asoko no ``hen na inu" wa inu ja nai.  Watashi no neko desu!! 
+
+
+\end{document}
