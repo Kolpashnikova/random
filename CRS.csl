@@ -81,7 +81,7 @@
   <macro name="title">
     <choose>
       <if type="article-journal article" match="any">
-        <text variable="title" text-case="sentence" quotes="true" font-style="italic"/> 
+        <text variable="title" text-case="sentence" font-style="italic"/> 
         <!--changes the words in the title in the lowercase sentence type instead of "title"-->
       </if>
       <else-if type="bill book graphic legal_case legislation motion_picture report song" match="any">
