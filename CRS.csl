@@ -80,7 +80,7 @@
   </macro>
   <macro name="title">
     <choose>
-      <if type="article-newspaper article-magazine" match="any">
+      <if type="article-journal">
         <text variable="title" text-case="sentence"/>
       </if>
       <else-if type="bill book graphic legal_case legislation motion_picture report song" match="any">
