@@ -139,7 +139,7 @@
     </sort>
     <layout prefix="(" suffix=")" delimiter="; ">
       <group delimiter=":">
-        <group delimiter=", ">
+        <group delimiter=", "> <!--this is where you add/remove a delimiter between author and date-->
           <text macro="author-short"/>
           <text macro="year-date"/>
         </group>
@@ -164,7 +164,7 @@
             <text macro="title" prefix=" " suffix="."/>
           </group>
           <group prefix=" " delimiter=", ">
-            <text variable="container-title" font-style="italic" text-case="title"/>
+            <text variable="container-title" font-style="italic" text-case="sentence"/>
             <text macro="day-month"/>
             <text variable="edition"/>
             <text variable="page" prefix=" "/>
