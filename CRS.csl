@@ -4,6 +4,7 @@
     <title>Canadian Review of Sociology</title>
     <title-short>CRS</title-short>
     <id>http://www.zotero.org/styles/canadian-review-of-sociology</id>
+    <link href="https://raw.githubusercontent.com/Kolpashnikova/random/master/CRS.csl" rel="self"/>
     <author>
       <name>Kamila Kolpashnikova</name>
       <email>kamilakolpashnikova@gmail.com</email>
@@ -138,7 +139,7 @@
     </sort>
     <layout prefix="(" suffix=")" delimiter="; ">
       <group delimiter=":">
-        <group delimiter=" ">
+        <group delimiter=", ">
           <text macro="author-short"/>
           <text macro="year-date"/>
         </group>
