@@ -81,13 +81,13 @@
   <macro name="title">
     <choose>
       <if type="thesis">
-        <text variable="title" text-case="title"/>
+        <text variable="title" text-case="sentence"/>
       </if>
       <else-if type="bill book graphic legal_case legislation motion_picture report song" match="any">
-        <text variable="title" font-style="italic" text-case="title"/>
+        <text variable="title" font-style="italic" text-case="sentence"/>
       </else-if>
       <else>
-        <text variable="title" quotes="true" text-case="title"/>
+        <text variable="title" quotes="true" text-case="sentence"/>
       </else>
     </choose>
   </macro>
@@ -164,7 +164,7 @@
             <text macro="title" prefix=" " suffix="."/>
           </group>
           <group prefix=" " delimiter=", ">
-            <text variable="container-title" font-style="italic" text-case="sentence"/>
+            <text variable="container-title" font-style="italic" text-case="title"/>
             <text macro="day-month"/>
             <text variable="edition"/>
             <text variable="page" prefix=" "/>
