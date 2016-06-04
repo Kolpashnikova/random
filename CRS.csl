@@ -88,7 +88,7 @@
         <text variable="title" font-style="italic" text-case="title"/>
       </else-if>
       <else>
-        <text variable="title" quotes="true" text-case="title"/>
+        <text variable="title" text-case="title"/>
       </else>
     </choose>
   </macro>
