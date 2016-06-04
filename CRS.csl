@@ -172,12 +172,19 @@
           </group>
         </if>
         <else-if type="article-journal article" match="any">
-          <text macro="title" prefix=" " suffix="."/>
-          <group prefix=" " delimiter=", ">
-            <text macro="edition"/>
-            <text macro="editor" suffix="."/>
-            <text variable="genre"/>
-            <text macro="publisher"/>
+          <group suffix=".">
+            <text macro="title" prefix=" " suffix="." quotes="true"/>
+            <text macro="editor" prefix=" "/>
+          </group>
+          <group prefix=" " suffix="." delimiter=" ">
+            <text variable="container-title" font-style="italic"/>
+            <group delimiter=":">
+              <group>
+                <text variable="volume"/>
+                <text variable="issue" prefix="(" suffix=")"/>
+              </group>
+              <text variable="page"/>
+            </group>
           </group>
         </else-if>
         <else-if type="bill book graphic legal_case legislation motion_picture report song" match="any">
