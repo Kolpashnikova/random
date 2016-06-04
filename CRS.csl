@@ -80,7 +80,7 @@
   </macro>
   <macro name="title">
     <choose>
-      <if type="article-journal article" match="any">
+      <if type="thesis">
         <text variable="title" text-case="sentence" font-style="italic"/> 
         <!--changes the words in the title in the lowercase sentence type instead of "title"-->
       </if>
@@ -171,7 +171,7 @@
             <text variable="page" prefix=" "/>
           </group>
         </if>
-        <else-if type="article-journal article" match="any">
+        <else-if type="thesis">
           <text macro="title" prefix=" " suffix="." quotes="true"/>
           <group prefix=" " delimiter=", ">
             <text macro="edition"/>
