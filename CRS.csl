@@ -172,7 +172,7 @@
           </group>
         </if>
         <else-if type="article-journal article" match="any">
-          <text macro="title" prefix=" " suffix="." quotes="true"/>
+          <text macro="title" prefix=" " suffix="."/>
           <group prefix=" " delimiter=", ">
             <text macro="edition"/>
             <text macro="editor" suffix="."/>
