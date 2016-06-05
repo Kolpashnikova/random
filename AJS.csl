@@ -81,14 +81,13 @@
   <macro name="title">
     <choose>
       <if type="thesis">
-        <text variable="title" text-case="title" font-style="italic"/> 
-        <!--changes the words in the title in the lowercase sentence type instead of "title"-->
+        <text variable="title" text-case="title"/>
       </if>
       <else-if type="bill book graphic legal_case legislation motion_picture report song" match="any">
         <text variable="title" font-style="italic" text-case="title"/>
       </else-if>
       <else>
-        <text variable="title" text-case="title"/>
+        <text variable="title" quotes="true" text-case="title"/>
       </else>
     </choose>
   </macro>
@@ -133,14 +132,14 @@
       </else>
     </choose>
   </macro>
-  <citation et-al-min="3" et-al-use-first="1" et-al-subsequent-min="3" et-al-subsequent-use-first="1" disambiguate-add-year-suffix="true" disambiguate-add-names="true" disambiguate-add-givenname="true" collapse="year">
+  <citation et-al-min="4" et-al-use-first="1" et-al-subsequent-min="3" et-al-subsequent-use-first="1" disambiguate-add-year-suffix="true" disambiguate-add-names="true" disambiguate-add-givenname="true" collapse="year">
     <sort>
       <key macro="author-short"/>
       <key macro="year-date"/>
     </sort>
     <layout prefix="(" suffix=")" delimiter="; ">
       <group delimiter=":">
-        <group delimiter=", "> <!--this is where you add/remove a delimiter between author and date-->
+        <group delimiter=" ">
           <text macro="author-short"/>
           <text macro="year-date"/>
         </group>
@@ -168,23 +167,16 @@
             <text variable="container-title" font-style="italic" text-case="title"/>
             <text macro="day-month"/>
             <text variable="edition"/>
-            <text variable="page" prefix=" "/>
+            <text variable="page"/>
           </group>
         </if>
         <else-if type="thesis">
-          <group suffix=".">
-            <text macro="title" prefix=" " suffix="." quotes="true"/>
-            <text macro="editor" prefix=" "/>
-          </group>
-          <group prefix=" " suffix="." delimiter=" ">
-            <text variable="container-title" font-style="italic"/>
-            <group delimiter=":">
-              <group>
-                <text variable="volume"/>
-                <text variable="issue" prefix="(" suffix=")"/>
-              </group>
-              <text variable="page"/>
-            </group>
+          <text macro="title" prefix=" " suffix="." quotes="true"/>
+          <group prefix=" " delimiter=", ">
+            <text macro="edition"/>
+            <text macro="editor" suffix="."/>
+            <text variable="genre"/>
+            <text macro="publisher"/>
           </group>
         </else-if>
         <else-if type="bill book graphic legal_case legislation motion_picture report song" match="any">
